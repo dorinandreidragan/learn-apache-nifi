@@ -152,3 +152,5 @@ Prerequisites:
 ## References
 
 [Running Nifi in a Docker Container](https://nathanlabadie.com/running-nifi-in-a-docker-container/)
+
+[Using volumes with rootles podman, explained](https://www.tutorialworks.com/podman-rootless-volumes/)
