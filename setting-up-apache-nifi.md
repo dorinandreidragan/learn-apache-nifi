@@ -103,11 +103,82 @@ Apache NiFi Cluster Terminologies
 - Cluster Coordinator - elected by Zookeeper and manages the cluster
 - Cluster Node - performs actual data processing
 
+## Configuration Tabs of a Processor
+
+Settings
+
+- Penalty & Yield duration
+- Terminate relationship
+- Logging bulletin
+
+Schedule
+
+- Scheduling settings
+- Concurrent tasks
+- Execution
+
+Properties
+
+- Processor-specific
+- User-defined properties
+- Refering to other components
+
+Comments
+
+## Connecting Processors
+
+Predefined relationships
+
+Routing data through one or more relationships
+
+All relationships need to be set
+
+Advanced configuration settings
+
+- FlowFile Expiration
+- Back Presure and Thresholds
+- Prioritizers
+- Load Balancing
+
+## Controller Services
+
+Services shared by components
+
+Avaoid redundancy
+
+Running encapsulated
+
+Pre-built and custom controller services
+
+Examples:
+
+- Providing connections and credentials
+- Sending reporting statistics
+- Interpreting different data formats
+
+## Apache NiFi Attributes and Expressions
+
+Structore of a NiFi Expression
+
+`${filename:equals('file')}`
+
+## Demos
+
+### Calling a REST API and Putting Data to Local Files
+
 ## Install with Podman
 
 Make sure you have `podman` installed.
 
-Running Apache NiFi on `http://localhost:8080`
+Running Apache NiFi on `http://localhost:8080/nifi`
+
+```bash
+  -p 8080:8080 \
+  -d \
+  apache/nifi:latest
+```
+
+Running Apache NiFi on `https://localhost:8443/nifi`
 
 ```bash
   -p 8443:8443 \

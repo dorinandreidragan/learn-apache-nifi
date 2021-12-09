@@ -1,0 +1,22 @@
+{
+    "namespace": "nifi",
+    "name": "wikipedia",
+    "type": "record",
+    "fields": [
+        {
+            "name": "user",
+            "type": "string"
+        },
+        {
+            "name": "title",
+            "type": "string"
+        },
+        {
+            "name": "timestamp",
+            "type": {
+                "type": "string",
+                "logicalType": "timestamp"
+            }
+        }
+    ]
+}

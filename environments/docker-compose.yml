@@ -7,11 +7,21 @@ services:
     image: apache/nifi
     container_name: nifi
     ports:
-      - 8080:8080
+      - 9443:9443
+      - 9999:9999 # open for SOAP from SAP
     environment:
-      - NIFI_WEB_HTTP_PORT=8080
+      - NIFI_WEB_HTTPS_PORT=9443
+      - SINGLE_USER_CREDENTIALS_USERNAME=admin
+      - SINGLE_USER_CREDENTIALS_PASSWORD=ctsBtRBKHRAx69EqUghvvgEvjnaLjFEB
     networks:
       - nifinet
+  nifi-registry:
+    - image: apache/nifi-registry
+      container_name: nifi-registry
+      ports:
+        - 108080:108080
+      networks:
+        - nifinet
 networks:
   nifinet:
     driver: bridge
